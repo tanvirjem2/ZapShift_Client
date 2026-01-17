@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router';
+import ZapShift from '../ZapShift/ZapShift';
 
 const Navbar = () => {
 
@@ -26,7 +27,9 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl">
+                    <ZapShift></ZapShift>
+                </a>
             </div>
 
             {/* Navbar Center */}
