@@ -10,7 +10,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 shadow-sm rounded-4xl">
 
             {/* Navbar Start */}
 
