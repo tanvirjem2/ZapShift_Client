@@ -56,12 +56,12 @@ const servicesData = [
 
 const Services = () => {
     return (
-        <section className="py-16 bg-base-200 rounded-4xl">
+        <section className="py-16 rounded-4xl bg-[#03373D] sm:p-3 md:p-14 lg:p-28">
             <div className="container mx-auto px-4">
 
                 {/* Section Header */}
                 <div className="text-center max-w-2xl mx-auto mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    <h2 className="text-3xl text-primary md:text-4xl font-bold mb-4">
                         Our Services
                     </h2>
                     <p className="text-gray-500">
