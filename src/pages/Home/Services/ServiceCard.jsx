@@ -14,12 +14,12 @@ const ServiceCard = ({ icon: Icon, title, description }) => {
                 </div>
 
                 {/* Title */}
-                <h3 className="card-title text-lg font-semibold">
+                <h3 className="card-title text-lg font-semibold text-[#03373D]">
                     {title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-[#606060]">
                     {description}
                 </p>
 
