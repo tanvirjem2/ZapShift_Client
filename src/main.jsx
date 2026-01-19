@@ -7,10 +7,19 @@ import './index.css'
 import { RouterProvider } from "react-router/dom";
 import { router } from './router/router.jsx';
 
+// --- Animation On Scroll ---
+
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+
+Aos.init();
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <div className='font-urbanist max-w-375 mx-auto'>
-      <RouterProvider router={router} />
+    <div className=''>
+      <div className='font-urbanist max-w-375 mx-auto'>
+        <RouterProvider router={router} />
+      </div>
     </div>
   </StrictMode>,
 )

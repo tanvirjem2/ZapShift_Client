@@ -56,7 +56,7 @@ const servicesData = [
 
 const Services = () => {
     return (
-        <section className="py-16 rounded-4xl bg-[#03373D] sm:p-3 md:p-14 lg:p-28">
+        <section className="py-16 my-24 rounded-4xl bg-[#03373D] sm:p-3 md:p-14 lg:p-28">
             <div className="container mx-auto px-4">
 
                 {/* Section Header */}

@@ -22,7 +22,7 @@ const logos = [
 
 const ClientLogosMarquee = () => {
     return (
-        <section className="py-16 bg-base-100">
+        <section className='mb-24'>
             <div className="container mx-auto px-4">
 
                 {/* Section Header */}
