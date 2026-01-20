@@ -5,7 +5,7 @@ import bgImage from "../../../assets/be-a-merchant-bg.png"
 
 const BeMerchant = () => {
     return (
-        <section
+        <section data-aos="zoom-in-up"
             className="mt-20 bg- bg-[#03373d] rounded-4xl px-6 py-12 lg:p-20 bg-no-repeat"
             style={{ backgroundImage: `url(${bgImage})` }}
         >
