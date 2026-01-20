@@ -4,6 +4,13 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* This targets the entire browser window */
+@layer base {
+    body {
+        @apply bg-[#ebeced];
+    }
+}
+
 /* Second part */
 
 .font-urbanist {

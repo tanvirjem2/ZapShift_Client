@@ -51,44 +51,68 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="my-28 overflow-hidden">
+        <section className="py-20 overflow-hidden">
             <div className="container mx-auto px-4 text-center">
-
-                {/* Top image */}
-                <img src={customerImage} className="mx-auto mb-6" alt="" />
-
-                <h2 className="text-[#03373D] text-4xl font-bold mb-4">
-                    What our customers are saying
-                </h2>
-
-                <p className="max-w-xl mx-auto text-gray-500 mb-10">
-                    Enhance posture, mobility, and well-being effortlessly with Posture Pro. Achieve proper alignment, reduce pain, and strengthen your body with ease!
+                <img src={customerImage} className="mx-auto mb-6 w-48" alt="" />
+                <h2 className="text-[#03373D] text-4xl font-bold mb-4">What our customers are sayings</h2>
+                <p className="max-w-xl mx-auto text-gray-500 mb-16">
+                    Enhance posture, mobility, and well-being effortlessly with Posture Pro.
+                    Achieve proper alignment, reduce pain, and strengthen your body with ease!
                 </p>
 
-                {/* Carousel */}
-                <div className="relative h-105 flex items-center justify-center">
+                {/* Carousel Container */}
+                <div className="relative h-100 flex items-center justify-center">
+                    {testimonialsData.map((item, index) => {
+                        let position = index - activeIndex;
+                        // Loop logic
+                        if (position < -2) position += testimonialsData.length;
+                        if (position > 2) position -= testimonialsData.length;
 
-                    {testimonialsData.map((item, index) => (
-                        <TestimonialCard
-                            key={item.id}
-                            testimonial={item}
-                            position={index - activeIndex}
-                        />
-                    ))}
-
+                        return (
+                            <TestimonialCard
+                                key={item.id}
+                                testimonial={item}
+                                position={position}
+                                isActive={activeIndex === index}
+                            />
+                        );
+                    })}
                 </div>
 
                 {/* Controls */}
-                <div className="flex justify-center items-center gap-6 mt-6">
-                    <button onClick={prevSlide} className="btn btn-circle btn-outline">
-                        ←
+                <div className="flex justify-center items-center gap-4 mt-8">
+                    <button onClick={prevSlide}
+                        className="w-12 h-12 rounded-full 
+                        text-black 
+                        bg-white 
+                        flex 
+                        items-center 
+                        justify-center 
+                        shadow-sm 
+                        hover:bg-lime-400 transition-colors"
+                    >
+                        <span className="text-xl">←</span>
                     </button>
 
-                    <button
-                        onClick={nextSlide}
-                        className="btn btn-circle bg-lime-400 text-black hover:bg-lime-500"
+                    {/* Pagination Dots */}
+                    <div className="flex gap-2">
+                        {testimonialsData.map((_, i) => (
+                            <div key={i}
+                                className={`h-2 w-2 rounded-full transition-all ${activeIndex === i ? "bg-[#03373D] w-4" : "bg-gray-300"}`} />
+                        ))}
+                    </div>
+
+                    <button onClick={nextSlide}
+                        className="w-12 h-12 rounded-full 
+                        text-black 
+                        bg-white 
+                        flex 
+                        items-center 
+                        justify-center 
+                        shadow-sm 
+                        hover:bg-lime-400 transition-colors"
                     >
-                        →
+                        <span className="text-xl">→</span>
                     </button>
                 </div>
             </div>
