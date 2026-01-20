@@ -61,7 +61,7 @@ const Testimonials = () => {
                     What our customers are saying
                 </h2>
 
-                <p className="max-w-xl mx-auto text-gray-500 mb-20">
+                <p className="max-w-xl mx-auto text-gray-500 mb-10">
                     Enhance posture, mobility, and well-being effortlessly with Posture Pro. Achieve proper alignment, reduce pain, and strengthen your body with ease!
                 </p>
 
