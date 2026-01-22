@@ -52,7 +52,7 @@ const FAQ = () => {
                         For any service changes or announcements, we also notify our users in advance.
                     </div>
                 </div>
-                <div className='flex items-center justify-center mt-10'>
+                <div className='group flex items-center justify-center mt-10 crsor-pointer'>
                     <button className='btn p-4 border-none text-[#1F1F1F] text-[20px] bg-[#CAEB66]'>See More FAQ’s</button>
                     <button className='btn btn-circle text-8xl bg-black text-[#CAEB66]'><LuArrowUpRight /></button>
                 </div>
