@@ -5,11 +5,11 @@
 @plugin "daisyui";
 
 /* This targets the entire browser window */
-/* @layer base {
+@layer base {
     body {
         @apply bg-[#ebeced];
     }
-} */
+}
 
 /* Second part */
 

@@ -1,9 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { motion } from 'framer-motion';
 
 const Login = () => {
-
-    // --- React Hook Form ---
 
     const {
         register,
@@ -11,49 +10,128 @@ const Login = () => {
         formState: { errors }
     } = useForm();
 
-    // -- pass the onSubmit in handleSubmit ---
-
     const onSubmit = (data) => { console.log(data) }
 
     return (
-        <div>
-            <h1 className='font-extrabold text-5xl'>Welcome Back</h1>
-            <p className='mb-5'>Login with ZapShift</p>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <fieldset className="fieldset">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1]
+            }}
+            className="
+                w-full
+                flex
+                items-center
+                justify-center
+                px-4
+                sm:px-6
+                lg:px-8
+            "
+        >
+            <div
+                className="
+                    w-full
+                    max-w-md
+                    sm:max-w-lg
+                    bg-white
+                    rounded-2xl
+                    p-6
+                    sm:p-8
+                    shadow-sm
+                "
+            >
+                <h1
+                    className="
+                        font-extrabold
+                        text-3xl
+                        sm:text-4xl
+                        lg:text-5xl
+                        text-[#0F172A]
+                    "
+                >
+                    Welcome Back
+                </h1>
 
-                    <label className="label">Email</label>
-                    <input type="email" {...register('email', { required: true })}
-                        className="input" placeholder="Email" />
+                <p
+                    className="
+                        mt-2
+                        mb-5
+                        text-sm
+                        sm:text-base
+                        text-[#0F172A]
+                    "
+                >
+                    Login with ZapShift
+                </p>
 
-                    {errors.email?.type === "required" && (
-                        <span className='text-red-500'>This field is required</span>
-                    )}
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <fieldset className="fieldset">
 
-                    <label className="label">Password</label>
-                    <input
-                        type="password"
-                        {...register('password', {
-                            required: true,
-                            minLength: 6
-                        })}
-                        className="input" placeholder="Password" />
+                        <label className="label text-[#0F172A]">Email</label>
+                        <input
+                            type="email"
+                            {...register('email', { required: true })}
+                            className="input w-full"
+                            placeholder="Email"
+                        />
 
-                    {errors.password?.type === "required" && (
-                        <span className='text-red-500'>This field is required</span>
-                    )}
+                        {errors.email?.type === "required" && (
+                            <span className="text-red-500 text-sm">
+                                This field is required
+                            </span>
+                        )}
 
-                    {errors.password?.type === "minLength" && (
-                        <span className='text-red-500'>Must Be 6 Characters</span>
-                    )}
+                        <label className="label text-[#0F172A] mt-4">
+                            Password
+                        </label>
 
-                    <div><a className="link link-hover">Forgot password?</a></div>
+                        <input
+                            type="password"
+                            {...register('password', {
+                                required: true,
+                                minLength: 6
+                            })}
+                            className="input w-full"
+                            placeholder="Password"
+                        />
 
-                </fieldset>
-                <button className="btn text-[black] bg-[#CAEB66] mt-4">Login</button>
+                        {errors.password?.type === "required" && (
+                            <span className="text-red-500 text-sm">
+                                This field is required
+                            </span>
+                        )}
 
-            </form>
-        </div>
+                        {errors.password?.type === "minLength" && (
+                            <span className="text-red-500 text-sm">
+                                Must Be 6 Characters
+                            </span>
+                        )}
+
+                        <div className="mt-2 text-sm">
+                            <a className="link text-[#71717A] link-hover">
+                                Forgot password?
+                            </a>
+                        </div>
+
+                    </fieldset>
+
+                    <button
+                        className="
+                            btn
+                            w-full
+                            border-none
+                            text-black
+                            bg-[#CAEB66]
+                            mt-6
+                        "
+                    >
+                        Login
+                    </button>
+                </form>
+            </div>
+        </motion.div>
     );
 };
 
